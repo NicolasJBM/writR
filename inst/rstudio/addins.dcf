@@ -1,0 +1,16 @@
+Name: Chart
+Description: Search and insert different types of charts.
+Binding: add_chart
+Interactive: true
+
+Name: HTML
+Description: Search and insert different kinds of HTML environments.
+Binding: 
+Interactive: true
+
+Name: YAML
+Description: Prepare and insert YAML for papers.
+Binding: add_yaml
+Interactive: true
+
+

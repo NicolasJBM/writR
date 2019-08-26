@@ -1,0 +1,38 @@
+# Chapter 2
+
+This is an introduction to the book.
+$$
+\begin{aligned}
+\text{BGD} & = \alpha_1Size+\beta_0Performance \\
+& = \beta_0Performance
+\end{aligned}
+$$
+
+
+## Referenced Blocks
+
+You can separate from the body and number specific blocks: theorem (thm), lemma (lem), definition (def), corollary (cor), proposition (prp), and example (ex). For instance:
+
+```{theorem, pyth, name="Pythagorean theorem"}
+For a right triangle, if $c$ denotes the length of the hypotenuse
+and $a$ and $b$ denote the lengths of the other two sides, we have
+
+$$a^2 + b^2 = c^2$$
+```
+
+and later refer to this with the reference \@ref(thm:pyth)
+
+
+test the link towards a chapter: \@ref(chapterOne)
+
+
+## Just blocks
+
+Creating a block of a certain type will allow you to define a html div for which you can define a custom format in the .css:
+
+```{block2, type = "fancy"}
+
+This should be written with a fancy font.
+
+```
+

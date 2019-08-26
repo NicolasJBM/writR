@@ -1,0 +1,335 @@
+\documentclass[12pt,letterpaper]{article}
+
+% Additional libraries
+\usepackage{threeparttablex}
+\usepackage{dcolumn}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+
+% Add line numbers if requested.
+\usepackage{lineno}
+$if(linenumbers)$
+  \linenumbers
+$endif$
+
+% Define the font
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% Define 1-inch page margins
+\usepackage[margin=1in]{geometry}
+
+% Double spacing if requested
+\usepackage{setspace}
+$if(doublespace)$
+  \doublespacing
+$endif$
+
+% Justifies paragraphs in standard flush left format if requested
+$if(raggedright)$
+  \raggedright
+$endif$
+
+% for subtables
+\usepackage{subcaption}
+\captionsetup[subtable]{labelsep=colon, justification=raggedright}
+\renewcommand{\thesubtable}{Panel~\Alph{subtable}}
+\usepackage{adjustbox}
+\usepackage[figuresright]{rotating}
+
+% Place all captions on top
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+\usepackage{threeparttable}
+\renewenvironment{table}{\begin{center} \begin{singlespace} \begin{threeparttable}} {\end{threeparttable} \end{singlespace} \end{center}}
+
+% Import figures with windows
+\usepackage{graphicx}
+
+% Places all figures and charts at end of manuscript and adds 'insert table x about here' lines.
+$if(tabfigtoend)$
+  
+  \usepackage[nolists]{endfloat} 
+  \DeclareDelayedFloatFlavour*{sidewaystable}{table}
+  \DeclareDelayedFloatFlavour*{longtable}{table}
+  \DeclareDelayedFloatFlavour*{longsidewaystable}{table}
+  \DeclareDelayedFloatFlavour*{landscape}{table}
+  
+  \renewcommand{\figureplace}{
+    \begin{center}
+    \begin{singlespace}
+    ------------------------------------\\
+    Insert \figurename \ \thepostfig\ about here.\\
+    ------------------------------------
+    \end{singlespace}
+    \end{center}}
+  \renewcommand{\tableplace}{
+    \begin{center}
+    \begin{singlespace}
+    ------------------------------------\\
+    Insert \tablename \ \theposttbl\ about here.\\
+    ------------------------------------
+    \end{singlespace}
+    \end{center}}
+$endif$
+
+% Bold Table and Figure captions and text, with line separation.
+\usepackage{caption}
+\captionsetup{figurename=Figure}
+\captionsetup{tablename=Table}
+\captionsetup[figure]{labelfont={bf}, labelsep=period, justification=raggedright, singlelinecheck=false}
+\captionsetup[table]{labelfont={bf}, labelsep=period}
+
+% Format sections
+\usepackage{titlesec}
+ \titleformat{\title}
+     {\filcenter\normalfont\bfseries\uppercase\large}{\thetitle}{1em}{}
+\titleformat{\section}
+  {\normalfont\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\itshape}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection} %[runin]
+  {\normalfont\itshape}{\thesubsubsection.}{1em}{\hspace*{\parindent}}
+
+% Prepare the hack for the adjustment of the bibliography's format
+\usepackage[hidelinks]{hyperref}
+\usepackage{hanging}
+
+% redefines the title command
+\renewcommand{\title}[1]{
+	\centerline{\textbf{#1}}
+}
+
+% Proper paragraph indenting
+\parindent=1em
+\parskip=.5em
+
+% Common parameters for hypotheses and propositions
+\usepackage{amsmath}
+\usepackage{ntheorem}
+\theoremseparator{:}
+\theoremindent1\parindent
+\theoremrightindent1\parindent
+\theoremheaderfont{\kern-0em\normalfont}
+\theorembodyfont{\normalfont}
+\makeatletter
+
+% Defines environment for questions
+\newtheorem{question}{Question}
+\makeatletter
+\newcounter{quest}
+\newenvironment{gpquestion}
+ {
+  \refstepcounter{question}
+  \protected@edef\theprop{\thequestion}
+  \setcounter{quest}{\value{question}}
+  \setcounter{question}{0}
+  \def\thequestion{\theprop\alph{question}}
+  \ignorespaces
+}{
+  \setcounter{question}{\value{quest}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for hypotheses
+\newtheorem{hypothesis}{Hypothesis}
+\makeatletter
+\newcounter{hyp}
+\newenvironment{gphypothesis}
+ {
+  \refstepcounter{hypothesis}
+  \protected@edef\thehyp{\thehypothesis}
+  \setcounter{hyp}{\value{hypothesis}}
+  \setcounter{hypothesis}{0}
+  \def\thehypothesis{\thehyp\alph{hypothesis}}
+  \ignorespaces
+}{
+  \setcounter{hypothesis}{\value{hyp}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for propositions
+\newtheorem{proposition}{Proposition}
+\makeatletter
+\newcounter{prop}
+\newenvironment{gpproposition}
+ {
+  \refstepcounter{proposition}
+  \protected@edef\theprop{\theproposition}
+  \setcounter{prop}{\value{proposition}}
+  \setcounter{proposition}{0}
+  \def\theproposition{\theprop\alph{proposition}}
+  \ignorespaces
+}{
+  \setcounter{proposition}{\value{prop}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for the acknwoledgements
+\newenvironment{acknowledgements}{
+	\leftskip=\parindent \rightskip=\parindent
+	\noindent\ignorespaces}
+
+% Defines environment for the abstract	
+\newenvironment{fmtabstract}{}
+
+% Solves the problem of tigthlists
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+  
+% Define the spacing around equations
+\makeatletter
+\g@addto@macro\normalsize{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{10pt}
+  \setlength\abovedisplayshortskip{0pt}
+  \setlength\belowdisplayshortskip{10pt}
+}
+\makeatother
+  
+% Define the quote environment
+\renewenvironment{quote}
+               {\list{}{\rightmargin=3em\leftmargin=3em}
+                \item\relax\itshape\ignorespaces}
+               {\unskip\unskip\endlist}
+
+\makeatletter
+\newenvironment{quotep}[2][2em]
+  {\noindent\setlength{\@tempdima}{#1}%
+   \def\quotep@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax\itshape\ignorespaces}
+  {\par\normalfont\hfill--\ \quotep@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+% For citations
+\usepackage{natbib}
+\setcitestyle{aysep={,}}
+
+
+
+
+
+
+
+
+
+
+% Document content begins here:
+    
+\begin{document}
+
+
+
+$if(firstpage)$
+
+\begin{singlespace}
+
+\begin{Large}
+\begin{singlespace}
+\noindent\bfseries{$title$}
+\end{singlespace}
+\end{Large}
+
+\vspace{10mm}
+
+\begin{center}
+
+$for(author)$
+  \text{\uppercase{$author.name$}} \\
+  \textit{$author.affiliation$} \\
+  \textit{$author.address$} \\
+  \textit{$author.email$} \\
+  \vspace{5mm}
+$endfor$
+
+\vspace{5mm}
+
+$date$ \\
+
+\vspace{10mm}
+
+$if(disclaimer)$
+  $disclaimer$ \\
+$endif$
+
+\end{center}
+
+\vfill
+
+$if(acknowledgements)$
+  \begin{acknowledgements}
+  \noindent\textbf{Acknowledgements:} $acknowledgements$ \\
+  \end{acknowledgements}
+$endif$
+
+\vfill
+
+\end{singlespace}
+
+\newpage
+$endif$
+
+
+
+\begin{Large}
+\begin{singlespace}
+\noindent\bfseries{$title$}
+\end{singlespace}
+\end{Large}
+
+\vspace{10mm}
+
+\begin{fmtabstract}
+
+\noindent{\textit{Abstract:}} $abstract$
+
+\vspace{5mm}
+
+\noindent{\textit{Keywords:}} $keywords$
+
+\vspace{5mm}
+
+$if(jel)$
+  \noindent{\textit{JEL Classification:}} $jel$
+$endif$
+
+\vspace{5mm}
+
+$if(data)$
+  \noindent{\textit{Data Availability:}} $data$
+$endif$
+
+\end{fmtabstract}
+
+\newpage
+
+
+
+$body$
+
+
+
+\section*{References}\label{references}
+\begingroup
+\singlespacing\setlength{\parskip}{1em}
+\renewcommand{\section}[2]{}
+\bibliographystyle{fmt/ear}
+\bibliography{$bibliography$}
+\endgroup
+
+
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+
+\end{document}

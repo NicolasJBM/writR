@@ -1,0 +1,11 @@
+object,output,type,library,use
+table,latex,static,xtable,
+table,latex,static,knitr,
+long_table,latex,static,,
+fitted_table,latex,static,,
+table_panels,latex,static,,
+sideways_table,latex,static,,
+table,html,static,formattable,
+table,html,static,DT,
+table,html,interactive,rhansontable,
+table_pivot,html,interactive,rpivotTable,

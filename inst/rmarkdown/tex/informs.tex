@@ -1,0 +1,289 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author template for Organization Science (orsc)
+%% Mirko Janc, Ph.D., INFORMS, mirko.janc@informs.org
+%% ver. 0.95, December 2010
+%% Adjusted by Nicolas Mangin (2018) to add a few environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[orsc,blindrev]{informs3}
+\documentclass[$informsjnl$,$layout$]{fmt/informs3} % current default for manuscript submission
+
+\DoubleSpacedXI % Made default on 4/4/2014 per request
+%%\OneAndAHalfSpacedXI % current default line spacing
+%%\OneAndAHalfSpacedXII
+%%\DoubleSpacedXII
+
+% If hyperref is used, dvi-to-ps driver of choice must be declared as
+%   an additional option to the \documentclass. For example
+%\documentclass[dvips,orsc]{informs3}      % if dvips is used
+%\documentclass[dvipsone,orsc]{informs3}   % if dvipsone is used, etc.
+
+%%% ORSC uses endnotes!
+\usepackage{endnotes}
+\let\footnote=\endnote
+\let\enotesize=\normalsize
+\def\notesname{Endnotes}%
+\def\enoteformat{\rightskip0pt\leftskip0pt\parindent=0em
+  \leavevmode\hbox{\makeenmark}}
+
+
+
+
+% Additional libraries
+\usepackage{adjustbox}
+\usepackage{threeparttablex}
+\usepackage{subcaption}
+\usepackage{dcolumn}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage[table]{xcolor}
+\usepackage[figuresright]{rotating}
+
+
+% Private macros here (check that there is no clash with the style)
+% Solves the problem of tigthlists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Places all figures and charts at end of manuscript and adds 'insert table x about here' lines.
+$if(tabfigtoend)$
+  
+  \usepackage[nolists]{endfloat} 
+  \DeclareDelayedFloatFlavour*{sidewaystable}{table}
+  \DeclareDelayedFloatFlavour*{longtable}{table}
+  \DeclareDelayedFloatFlavour*{longsidewaystable}{table}
+  \DeclareDelayedFloatFlavour*{landscape}{table}
+  
+  \renewcommand{\figureplace}{
+    ------------------------------------\\
+    Insert \figurename \ \thepostfig\ about here.\\
+    ------------------------------------
+    }
+  \renewcommand{\tableplace}{
+    ------------------------------------\\
+    Insert \tablename \ \theposttbl\ about here.\\
+    ------------------------------------
+    }
+$endif$
+
+\usepackage[hidelinks]{hyperref}
+  
+% Defines environment for questions
+\newtheorem{question}{Question}
+\makeatletter
+\newcounter{quest}
+\newenvironment{gpquestion}
+ {
+  \refstepcounter{question}
+  \protected@edef\theprop{\thequestion}
+  \setcounter{quest}{\value{question}}
+  \setcounter{question}{0}
+  \def\thequestion{\theprop\alph{question}}
+  \ignorespaces
+}{
+  \setcounter{question}{\value{quest}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for hypotheses
+\usepackage{amsmath}
+\makeatletter
+\newcounter{hyp}
+\newenvironment{gphypothesis}
+ {
+  \refstepcounter{hypothesis}
+  \protected@edef\thehyp{\thehypothesis}
+  \setcounter{hyp}{\value{hypothesis}}
+  \setcounter{hypothesis}{0}
+  \def\thehypothesis{\thehyp\alph{hypothesis}}
+  \ignorespaces
+}{
+  \setcounter{hypothesis}{\value{hyp}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for propositions
+\makeatletter
+\newcounter{prop}
+\newenvironment{gpproposition}
+ {
+  \refstepcounter{proposition}
+  \protected@edef\theprop{\theproposition}
+  \setcounter{prop}{\value{proposition}}
+  \setcounter{proposition}{0}
+  \def\theproposition{\theprop\alph{proposition}}
+  \ignorespaces
+}{
+  \setcounter{proposition}{\value{prop}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Define the quote environment
+\renewenvironment{quote}
+               {\list{}{\rightmargin=3em\leftmargin=3em}
+                \item\relax\itshape\ignorespaces}
+               {\unskip\unskip\endlist}
+
+\makeatletter
+\newenvironment{quotep}[2][2em]
+  {\noindent\setlength{\@tempdima}{#1}%
+   \def\quotep@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax\itshape\ignorespaces}
+  {\par\normalfont\hfill--\ \quotep@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+% Natbib setup for author-year style
+\usepackage{natbib}
+ \bibpunct[, ]{(}{)}{,}{a}{}{,}%
+ \def\bibfont{\small}%
+ \def\bibsep{\smallskipamount}%
+ \def\bibhang{24pt}%
+ \def\newblock{\ }%
+ \def\BIBand{and}%
+
+%% Setup of theorem styles. Outcomment only one. 
+%% Preferred default is the first option.
+\TheoremsNumberedThrough     % Preferred (Theorem 1, Lemma 1, Theorem 2)
+%\TheoremsNumberedByChapter  % (Theorem 1.1, Lema 1.1, Theorem 1.2)
+
+%% Setup of the equation numbering system. Outcomment only one.
+%% Preferred default is the first option.
+\EquationsNumberedThrough    % Default: (1), (2), ...
+%\EquationsNumberedBySection % (1.1), (1.2), ...
+
+% In the reviewing and copyediting stage enter the manuscript number.
+\MANUSCRIPTNO{$submissionid$} % When the article is logged in and DOI assigned to it,
+                 %   this manuscript number is no longer necessary
+
+%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%
+
+% Outcomment only when entries are known. Otherwise leave as is and 
+%   default values will be used.
+%\setcounter{page}{1}
+%\VOLUME{00}%
+%\NO{0}%
+%\MONTH{Xxxxx}% (month or a similar seasonal id)
+%\YEAR{0000}% e.g., 2005
+%\FIRSTPAGE{000}%
+%\LASTPAGE{000}%
+%\SHORTYEAR{00}% shortened year (two-digit)
+%\ISSUE{0000} %
+%\LONGFIRSTPAGE{0001} %
+%\DOI{10.1287/xxxx.0000.0000}%
+
+% Author's names for the running heads
+% Sample depending on the number of authors;
+% \RUNAUTHOR{Jones}
+% \RUNAUTHOR{Jones and Wilson}
+% \RUNAUTHOR{Jones, Miller, and Wilson}
+% \RUNAUTHOR{Jones et al.} % for four or more authors
+% Enter authors following the given pattern:
+%\RUNAUTHOR{}
+
+% Title or shortened title suitable for running heads. Sample:
+% \RUNTITLE{Bundling Information Goods of Decreasing Value}
+% Enter the (shortened) title:
+%\RUNTITLE{}
+
+% Full title. Sample:
+\TITLE{$title$}
+% Enter the full title:
+%\TITLE{}
+
+% Block of authors and their affiliations starts here:
+% NOTE: Authors with same affiliation, if the order of authors allows, 
+%   should be entered in ONE field, separated by a comma. 
+%   \EMAIL field can be repeated if more than one author
+\ARTICLEAUTHORS{%
+$for(author)$
+  \AUTHOR{$author.name$}
+  \AFF{$author.affiliation$, $author.address$, \EMAIL{author.email}}
+$endfor$
+% Enter all authors
+} % end of the block
+
+\ABSTRACT{%
+$abstract$ % Enter your abstract
+}%
+
+% Sample
+%\KEYWORDS{deterministic inventory theory; infinite linear programming duality; 
+%  existence of optimal policies; semi-Markov decision process; cyclic schedule}
+
+% Fill in data. If unknown, outcomment the field
+\KEYWORDS{$keywords$}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Samples of sectioning (and labeling) in ORSC
+% NOTE: (1) \section and \subsection do NOT end with a period
+%       (2) \subsubsection and lower need end punctuation
+%       (3) capitalization is as shown (title style).
+%
+%\section{Introduction.}\label{intro} %%1.
+%\subsection{Duality and the Classical EOQ Problem.}\label{class-EOQ} %% 1.1.
+%\subsection{Outline.}\label{outline1} %% 1.2.
+%\subsubsection{Cyclic Schedules for the General Deterministic SMDP.}
+%  \label{cyclic-schedules} %% 1.2.1
+%\section{Problem Description.}\label{problemdescription} %% 2.
+
+% Text of your paper here
+
+$body$
+
+% Acknowledgments here
+\ACKNOWLEDGMENT{%
+$acknowledgements$ % Enter the text of acknowledgments here
+}% Leave this (end of acknowledgment)
+
+
+% Appendix here
+% Options are (1) APPENDIX (with or without general title) or 
+%             (2) APPENDICES (if it has more than one unrelated sections)
+% Outcomment the appropriate case if necessary
+%
+% \begin{APPENDIX}{<Title of the Appendix>}
+% \end{APPENDIX}
+%
+%   or 
+%
+% \begin{APPENDICES}
+% \section{<Title of Section A>}
+% \section{<Title of Section B>}
+% etc
+% \end{APPENDICES}
+
+\bigskip
+
+% Endnotes here
+\theendnotes
+
+\bigskip
+
+% References here (outcomment the appropriate case) 
+
+% CASE 1: BiBTeX used to constantly update the references 
+%   (while the paper is being written).
+\bibliographystyle{fmt/informs2014} % outcomment this and next line in Case 1
+\bibliography{$bibliography$} % if more than one, comma separated
+
+% CASE 2: BiBTeX used to generate mypaper.bbl (to be further fine tuned)
+%\input{mypaper.bbl} % outcomment this line in Case 2
+
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+
+\end{document}
+

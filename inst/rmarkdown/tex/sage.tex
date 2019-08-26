@@ -1,0 +1,251 @@
+%% Adjusted by Nicolas Mangin (2018) to add a few environments
+% sage_latex_guidelines.tex V1.10, 24 June 2016
+
+\documentclass[$layout$,times,doublespace]{fmt/sagej}
+
+
+
+% Additional libraries
+\usepackage{adjustbox}
+\usepackage{threeparttablex}
+\usepackage{subcaption}
+\usepackage{dcolumn}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage[table]{xcolor}
+\usepackage[figuresright]{rotating}
+
+
+\usepackage{moreverb,url}
+
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+%\def\volumeyear{$year$}
+
+
+
+
+
+
+% Define 1.5-inch page margins
+\usepackage[margin=1.5in]{geometry}
+
+% Add line numbers if requested.
+\usepackage{lineno} % add
+$if(linenumbers)$
+  \linenumbers % turns line numbering on
+$endif$
+
+% Solves the problem of tigthlists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Defines environment for questions
+\newtheorem{question}{Question}
+\makeatletter
+\newcounter{quest}
+\newenvironment{gpquestion}
+ {
+  \refstepcounter{question}
+  \protected@edef\theprop{\thequestion}
+  \setcounter{quest}{\value{question}}
+  \setcounter{question}{0}
+  \def\thequestion{\theprop\alph{question}}
+  \ignorespaces
+}{
+  \setcounter{question}{\value{quest}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for hypotheses
+\newtheorem{hypothesis}{Hypothesis}
+\makeatletter
+\newcounter{hyp}
+\newenvironment{gphypothesis}
+ {
+  \refstepcounter{hypothesis}
+  \protected@edef\thehyp{\thehypothesis}
+  \setcounter{hyp}{\value{hypothesis}}
+  \setcounter{hypothesis}{0}
+  \def\thehypothesis{\thehyp\alph{hypothesis}}
+  \ignorespaces
+}{
+  \setcounter{hypothesis}{\value{hyp}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Defines environment for propositions
+\newtheorem{proposition}{Proposition}
+\makeatletter
+\newcounter{prop}
+\newenvironment{gpproposition}
+ {
+  \refstepcounter{proposition}
+  \protected@edef\theprop{\theproposition}
+  \setcounter{prop}{\value{proposition}}
+  \setcounter{proposition}{0}
+  \def\theproposition{\theprop\alph{proposition}}
+  \ignorespaces
+}{
+  \setcounter{proposition}{\value{prop}}
+  \ignorespacesafterend
+}
+\makeatother
+
+% Place all captions on top
+\usepackage{graphicx}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+\restylefloat{figure} 
+\usepackage{threeparttable}
+\renewenvironment{table}{\begin{center} \begin{threeparttable}} {\end{threeparttable} \end{center}}
+
+% Places all figures and charts at end of manuscript and adds 'insert table x about here' lines.
+$if(tabfigtoend)$
+  
+  \usepackage[nolists]{endfloat} 
+  \DeclareDelayedFloatFlavour*{sidewaystable}{table}
+  \DeclareDelayedFloatFlavour*{longtable}{table}
+  \DeclareDelayedFloatFlavour*{longsidewaystable}{table}
+  \DeclareDelayedFloatFlavour*{landscape}{table}
+  
+  \renewcommand{\figureplace}{
+    \begin{center}
+    \begin{singlespace}
+    ------------------------------------\\
+    Insert \figurename \ \thepostfig\ about here.\\
+    ------------------------------------
+    \end{singlespace}
+    \end{center}}
+  \renewcommand{\tableplace}{
+    \begin{center}
+    \begin{singlespace}
+    ------------------------------------\\
+    Insert \tablename \ \theposttbl\ about here.\\
+    ------------------------------------
+    \end{singlespace}
+    \end{center}}
+$endif$
+
+% Define the quote environment
+\renewenvironment{quote}
+               {\list{}{\rightmargin=3em\leftmargin=3em}
+                \item\relax\itshape\ignorespaces}
+               {\unskip\unskip\endlist}
+
+\makeatletter
+\newenvironment{quotep}[2][2em]
+  {\noindent\setlength{\@tempdima}{#1}%
+   \def\quotep@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax\itshape\ignorespaces}
+  {\par\normalfont\hfill--\ \quotep@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+% Send footnotes at the end
+\usepackage{endnotes}
+\let\footnote=\endnote
+\usepackage{etoolbox}
+\patchcmd{\enoteformat}{1.8em}{0pt}{}{}
+
+% References
+\usepackage{natbib}
+\setcitestyle{aysep={,}}
+
+
+
+
+
+\begin{document}
+
+
+
+$if(firstpage)$
+
+\begin{center}
+
+\noindent\textbf{\Large{$title$}}
+
+\vspace{10mm} %5mm vertical space
+
+
+$for(author)$
+  \textbf{$author.name$} \\
+  \text{$author.affiliation$} \\
+  \textit{$author.address$} \\
+  \textit{$author.email$} \\
+  \vspace{5mm} %5mm vertical space
+$endfor$
+
+\vspace{5mm} %5mm vertical space
+
+$date$ \\
+
+\vspace{10mm} %5mm vertical space
+
+$if(disclaimer)$
+  $disclaimer$ \\
+$endif$
+
+\end{center}
+
+\vfill
+
+$if(acknowledgements)$
+  \begin{acks}
+    $acknowledgements$
+  \end{acks}
+$endif$
+
+\vfill
+
+\newpage
+$endif$
+
+
+
+\title{$title$}
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+\keywords{$keywords$}
+
+\maketitle
+
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}
+
+
+
+$body$
+
+
+
+\theendnotes
+
+
+
+\begingroup
+\singlespacing\setlength{\parskip}{1em}
+\bibliographystyle{fmt/apa}
+\bibliography{$bibliography$}
+\endgroup
+
+
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+
+\end{document}

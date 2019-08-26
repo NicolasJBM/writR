@@ -1,0 +1,22 @@
+field,acronym,journal,template,type
+Accounting,aos,"Accounting, Organizations, and Society",elsevier.tex,elsevier
+Accounting,bria,Behavioral Research in Accounting,aaa_nonum.tex,writer
+Accounting,car,Contemporary Accounting Research,car.tex,writer
+Accounting,cpa,Critical Perspectives on Accounting,elsevier.tex,elsevier
+Accounting,ear,European Accounting Review,ear.tex,writer
+Accounting,jae,Journal of Accounting and Economics,elsevier.tex,elsevier
+Accounting,jar,Journal of Accounting Research,jar.tex,writer
+Accounting,jaaf,"Journal of Accounting, Auditing, and Finance",sage.tex,sage
+Accounting,jmar,Journal of Management Accounting Research,aaa_nonum.tex,writer
+Accounting,mar,Management Accounting Research,elsevier.tex,elsevier
+Accounting,tar,The Accounting Review,aaa_num.tex,writer
+Finance,jfe,Journal of Financial Economics,elsevier.tex,elsevier
+Management,amj,Academy of Management Journal,aom.tex,writer
+Management,amr,Academy of Management Review,aom.tex,writer
+Management,jibs,Journal of International Business Studies,jibs.tex,writer
+Management,jom,Journal of Management,jom.tex,writer
+Management,mnsc,Management Science,informs.tex,informs
+Management,orsc,Organization Science,informs.tex,informs
+Management,smj,Strategic Management Journal,smj.tex,writer
+Method,orm,Organizational Research Methods,sage.tex,sage
+Psycho-sociology,jap,Journal of Applied Psychology,apa.tex,writer
