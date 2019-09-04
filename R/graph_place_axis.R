@@ -8,7 +8,7 @@
 #' @examples
 #' library(ggplot2)
 #' library(dplyr)
-#' library(writer)
+#' library(writR)
 #' g <- iris %>%
 #'   mutate_if(is.numeric, scale) %>%
 #'   ggplot(aes(x = Sepal.Length, y = Petal.Length, color = Species)) +

@@ -14,6 +14,7 @@ sort_glossary <- function(glossary) {
   
   V1 <- NULL
   V2 <- NULL
+  first <- NULL
   
   data <- readLines(glossary) %>%
     stringr::str_remove_all(" \\\\newline")

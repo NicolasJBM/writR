@@ -147,17 +147,17 @@ add_chart <- function() {
     
     ##########################
     output$information <- renderUI({
-      choices <- c("", sort(unique(dplyr::filter(writer::charts, !is.na(render))$information)))
+      choices <- c("", sort(unique(dplyr::filter(writR::charts, !is.na(render))$information)))
       selectInput("slctinfo", "Information:", choices = choices, selected = "")
     })
     
     afterinfo <- reactive({
       if (is.null(input$slctinfo)){
-        dplyr::filter(writer::charts, !is.na(render))
+        dplyr::filter(writR::charts, !is.na(render))
       } else if (input$slctinfo == ""){
-        dplyr::filter(writer::charts, !is.na(render))
+        dplyr::filter(writR::charts, !is.na(render))
       } else {
-        dplyr::filter(writer::charts, !is.na(render)) %>%
+        dplyr::filter(writR::charts, !is.na(render)) %>%
           dplyr::filter(information == input$slctinfo)
       }
     })
@@ -247,32 +247,32 @@ add_chart <- function() {
     ##########################
     output$plot <- renderPlot({
       validate(need(rendering() == "plot", message=FALSE))
-      source(paste0(find.package("writer"), "/charts/",afterid()$idchart[[1]],".R"))
+      source(paste0(find.package("writR"), "/charts/",afterid()$idchart[[1]],".R"))
       if (exists("chart")) get("chart")
     })
     
     output$plotly <- renderPlotly({
       validate(need(rendering() == "plotly", message=FALSE))
-      source(paste0(find.package("writer"), "/charts/",afterid()$idchart[[1]],".R"))
+      source(paste0(find.package("writR"), "/charts/",afterid()$idchart[[1]],".R"))
       if (exists("chart")) get("chart")
     })
     
     output$collapsibleTree <- renderCollapsibleTree({
       validate(need(rendering() == "collapsibleTree", message=FALSE))
-      source(paste0(find.package("writer"), "/charts/",afterid()$idchart[[1]],".R"))
+      source(paste0(find.package("writR"), "/charts/",afterid()$idchart[[1]],".R"))
       if (exists("chart")) get("chart")
     })
     
     
     output$grviz <- renderGrViz({
       validate(need(rendering() == "grviz", message=FALSE))
-      source(paste0(find.package("writer"), "/charts/",afterid()$idchart[[1]],".R"))
+      source(paste0(find.package("writR"), "/charts/",afterid()$idchart[[1]],".R"))
       if (exists("chart")) get("chart")
     })
     
     output$ndtv <- ndtv::renderNdtvAnimationWidget({
       validate(need(rendering() == "ndtv", message=FALSE))
-      source(paste0(find.package("writer"), "/charts/",afterid()$idchart[[1]],".R"))
+      source(paste0(find.package("writR"), "/charts/",afterid()$idchart[[1]],".R"))
       if (exists("chart")) get("chart")
     })
     
@@ -314,7 +314,7 @@ add_chart <- function() {
       if (rendering() == "text"){
         code <- "\n\n\n"
       } else {
-        code <- paste(c(readLines(paste0(find.package("writer"), "/charts/",afterid()$idchart[[1]],".R")), "\nchart"), "\n")
+        code <- paste(c(readLines(paste0(find.package("writR"), "/charts/",afterid()$idchart[[1]],".R")), "\nchart"), "\n")
       }
       
       if (input$inchunk){

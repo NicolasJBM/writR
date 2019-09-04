@@ -197,10 +197,10 @@ add_yaml <- function() {
     
     values <- reactiveValues()
     values$authors <- yamlinfo$authors
-    values$jelcodes <- writer::jelcodes
-    values$slctcodes <- writer::jelcodes %>%
+    values$jelcodes <- writR::jelcodes
+    values$slctcodes <- writR::jelcodes %>%
       dplyr::filter(code %in% yamlinfo$jel)
-    values$journals <- writer::journals
+    values$journals <- writR::journals
     
     
     #######################################################
@@ -402,7 +402,7 @@ add_yaml <- function() {
           tgtjnl <- values$journals %>%
             dplyr::filter(acronym == input$tgtjnl)
           
-          if (tgtjnl$type[[1]] == "writer"){
+          if (tgtjnl$type[[1]] == "writR"){
             ui <- list(
               checkboxInput("firstpage", "Include the first page?", value = TRUE),
               checkboxInput("tabfigtoend", "Place tables and figures at the end?", value = TRUE),
@@ -497,7 +497,7 @@ add_yaml <- function() {
         
         mdoutput <- c(
           "output:\n",
-          "  writer::gen_paper:\n",
+          "  writR::gen_paper:\n",
           "     engine: xelatex\n",
           paste0("     journal: ", yamlinfo$journal, "\n")
         )
@@ -556,7 +556,7 @@ add_yaml <- function() {
         
         mdoutput <- c(
           "output:\n",
-          "  writer::gen_paper:\n",
+          "  writR::gen_paper:\n",
           "     engine: xelatex\n",
           paste0("     journal: ", yamlinfo$journal, "\n")
         )
@@ -613,7 +613,7 @@ add_yaml <- function() {
         
         mdoutput <- c(
           "output:\n",
-          "  writer::gen_paper:\n",
+          "  writR::gen_paper:\n",
           "     engine: xelatex\n",
           paste0("     journal: ", yamlinfo$journal, "\n")
         )

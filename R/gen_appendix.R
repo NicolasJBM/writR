@@ -14,7 +14,7 @@ gen_appendix <- function(...,
                         keep_tex = TRUE,
                         md_extensions = c("-autolink_bare_uris")) {
   
-  template <- system.file("rmarkdown", "tex", file.path("appendix.tex"), package = "writer")
+  template <- system.file("rmarkdown", "tex", file.path("appendix.tex"), package = "writR")
   
   # Retrieve the template and produce the document.
   inherit_pdf_document <- function(...) {

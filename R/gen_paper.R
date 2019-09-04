@@ -47,9 +47,9 @@ gen_paper <- function(...,
   
   
   # Select the appropriate template for the journal specified and find its path.
-  template <- writer::journals[writer::journals$acronym == journal,]
+  template <- writR::journals[writR::journals$acronym == journal,]
   
-  template_tex <- system.file("rmarkdown", "tex", file.path(template), package = "writer")
+  template_tex <- system.file("rmarkdown", "tex", file.path(template), package = "writR")
   
   # Retrieve the template and produce the document.
   inherit_pdf_document <- function(...) {
