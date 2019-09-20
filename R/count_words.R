@@ -2,7 +2,7 @@
 #' @param text Character. The sentence(s) in which the words have to be counted. Only paragraphs can be counted from the clipboard.
 #' @return Numeric. Number of words in the text
 #' @importFrom purrr map
-#' @importFrom buildR format_ascii
+#' @importFrom buildR bos_format_ascii
 #' @importFrom stringr str_split
 #' @importFrom utils read.table
 #' @export
@@ -16,7 +16,7 @@ count_words <- function(text = ""){
     closeAllConnections()
   } else text <- text
   text <- unlist(purrr::map(text, stringr::str_split, pattern = " "))
-  text <- purrr::map(text, buildR::format_ascii)
+  text <- purrr::map(text, buildR::bos_format_ascii)
   text <- unlist(text[text != ""])
   length(text)
 }
