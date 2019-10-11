@@ -10,5 +10,5 @@ chart <- diamonds %>%
   geom_bar(stat = 'identity', position = 'dodge') +
   facet_grid(clarity~.) +
   coord_flip() +
-  writer::graph_theme(legend.position = "right")
+  writR::graph_theme(legend.position = "right")
 

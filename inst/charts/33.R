@@ -16,4 +16,4 @@ chart <- ggplot(data = iris,
   labs(title="Iris Clustering", 
        subtitle="Illustration of a scatterplot",
        caption="Source: Iris") +
-  writer::graph_theme()
+  writR::graph_theme()

@@ -13,5 +13,5 @@ chart <- ggplot(data=base) +
   geom_hline(yintercept = 0, lty = 1, lwd = 2) +
   scale_fill_manual(values = c('red','blue')) +
   coord_flip() +
-  writer::graph_theme()
+  writR::graph_theme()
 

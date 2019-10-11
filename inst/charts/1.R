@@ -1,7 +1,7 @@
 library(tibble)
 library(dplyr)
 library(ggplot2)
-library(writer)
+library(writR)
 
 chart <- dplyr::bind_rows(
   dplyr::bind_rows(list(
@@ -21,4 +21,4 @@ chart <- dplyr::bind_rows(
                stackdir='center', 
                dotsize = .5, binwidth = 0.25,
                fill="grey", alpha = 0.5) +
-  writer::graph_theme()
+  writR::graph_theme()

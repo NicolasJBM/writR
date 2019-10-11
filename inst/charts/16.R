@@ -39,4 +39,4 @@ chart <- data.frame(
   scale_fill_manual(values=c('darkblue','palegreen','pink','darkred')) +
   geom_text(aes(x = Variances, y = position, label = label)) +
   ylab('Amounts') +
-  writer::graph_theme()
+  writR::graph_theme()
