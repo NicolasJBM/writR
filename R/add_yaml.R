@@ -21,13 +21,13 @@
 #' @importFrom shiny runGadget
 #' @importFrom shiny conditionalPanel
 #' @importFrom shiny tags
-#' @importFrom shiny dataTableOutput
+#' @importFrom DT DTOutput
 #' @importFrom shiny htmlOutput
 #' @importFrom shiny uiOutput
 #' @importFrom shiny plotOutput
 #' @importFrom shiny textOutput
 #' @importFrom shiny actionButton
-#' @importFrom shiny renderDataTable
+#' @importFrom DT renderDT
 #' @importFrom shiny renderUI
 #' @importFrom shiny renderPlot
 #' @importFrom shiny renderText
@@ -111,7 +111,7 @@ add_yaml <- function() {
           tags$hr(),
           uiOutput("orgauthor"),
           tags$hr(),
-          dataTableOutput("displayauthor")
+          DT::DTOutput("displayauthor")
         )
       ),
       
@@ -124,7 +124,7 @@ add_yaml <- function() {
             column(4, uiOutput("jelfiltl2")),
             column(4, uiOutput("jelfiltl3"))
           ),
-          dataTableOutput("preslctjel"),
+          DT::DTOutput("preslctjel"),
           tags$hr(),
           fluidRow(
             column(9, uiOutput("slctjelcodes")),
@@ -132,7 +132,7 @@ add_yaml <- function() {
                                    style="margin-top: 25px; color: #fff; background-color: #337ab7; border-color: #2e6da4")
                    )
           ),
-          dataTableOutput("displayjelselection")
+          DT::DTOutput("displayjelselection")
         )
       ),
       
@@ -285,7 +285,7 @@ add_yaml <- function() {
       }
     })
     
-    output$displayauthor <- renderDataTable({values$authors})
+    output$displayauthor <- DT::renderDT({values$authors})
     
     
     #######################################################
@@ -339,7 +339,7 @@ add_yaml <- function() {
       }
     })
     
-    output$preslctjel <- renderDataTable({
+    output$preslctjel <- DT::renderDT({
       jelafter3()
     }, options = list(
       pageLength = 4
@@ -358,7 +358,7 @@ add_yaml <- function() {
         dplyr::filter(code %in% selection)
     })
     
-    output$displayjelselection <- renderDataTable({
+    output$displayjelselection <- DT::renderDT({
       values$slctcodes
     }, options = list(
       pageLength = 4

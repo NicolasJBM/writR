@@ -3,7 +3,7 @@ Insert generated yaml here
 
 ```{r setup, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 # Load packages likely to be used.
-library(writer)
+library(writR)
 library(dplyr)
 library(knitr)
 library(stargazer)
@@ -14,7 +14,8 @@ options(
   scipen=999,
   knitr.kable.NA = ''
 )
-writer::gen_bib()
+
+bibliogR::gen_bib()
 ```
 
 
