@@ -177,10 +177,11 @@ $endif$
 % Defines environment for the acknwoledgements
 \newenvironment{acknowledgements}{
 	\leftskip=\parindent \rightskip=\parindent
-	\noindent\ignorespaces}
+	\noindent\ignorespaces\singlespace}
 
 % Defines environment for the abstract	
-\newenvironment{fmtabstract}{}
+\newenvironment{fmtabstract}{
+  \singlespace}
 
 % Solves the problem of tigthlists
 \providecommand{\tightlist}{
