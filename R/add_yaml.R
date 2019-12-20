@@ -181,7 +181,6 @@ add_yaml <- function() {
                          rank = as.integer(NA), corresponding = as.logical(NA)),
         jel = c(""),
         journal = "",
-        appendix = FALSE,
         submissionid = "",
         firstpage = TRUE,
         doublespace = TRUE,
@@ -388,8 +387,7 @@ add_yaml <- function() {
                               choices = jnllist,
                               selected = jnllist[[1]],
                               width = "100%")),
-        column(3, textInput("submissionid", "Submission ID (if any):", value = "")),
-        column(3, checkboxInput("appendix", "Include appendix?", value = FALSE))
+        column(3, textInput("submissionid", "Submission ID (if any):", value = ""))
       )
     })
     
@@ -448,7 +446,6 @@ add_yaml <- function() {
         authors = values$authors,
         jel = values$slctcodes$code,
         journal = input$tgtjnl,
-        appendix = input$appendix,
         submissionid = input$submissionid,
         firstpage = input$firstpage,
         doublespace = input$doublespace,
@@ -502,14 +499,6 @@ add_yaml <- function() {
           paste0("     journal: ", yamlinfo$journal, "\n")
         )
         
-        if (input$appendix){
-          mdoutput <- c(
-            mdoutput,
-            "     includes:\n",
-            "       after_body: appendix.tex\n"
-          )
-        }
-        
         
         yaml <- c(
           "---\n",
@@ -561,13 +550,6 @@ add_yaml <- function() {
           paste0("     journal: ", yamlinfo$journal, "\n")
         )
         
-        if (input$appendix){
-          mdoutput <- c(
-            mdoutput,
-            "     includes:\n",
-            "       after_body: appendix.tex\n"
-          )
-        }
         
         yaml <- c(
           "---\n",
@@ -617,14 +599,6 @@ add_yaml <- function() {
           "     engine: xelatex\n",
           paste0("     journal: ", yamlinfo$journal, "\n")
         )
-        
-        if (input$appendix){
-          mdoutput <- c(
-            mdoutput,
-            "     includes:\n",
-            "       after_body: appendix.tex\n"
-          )
-        }
         
         
         yaml <- c(

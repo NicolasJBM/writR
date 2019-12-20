@@ -1,9 +1,0 @@
----
-output: writer::gen_appendix
----
-
-# Appendix {-}
-
-## Appendix A {-}
-
-## Appendix B {-}
