@@ -4,9 +4,16 @@
 \alias{latex_fit_stargazer}
 \title{Create a Latex tabular environment for stargazer and insert it in an adjustable table}
 \usage{
-latex_fit_stargazer(..., table_caption = "", table_label = "",
-  env = "table", adjwidth = 0.75, adjheight = 0.75,
-  space_before = "15pt", space_after = "15pt")
+latex_fit_stargazer(
+  ...,
+  table_caption = "",
+  table_label = "",
+  env = "table",
+  adjwidth = 0.75,
+  adjheight = 0.75,
+  space_before = "15pt",
+  space_after = "15pt"
+)
 }
 \arguments{
 \item{...}{Arguments passed to the stargazer function.}

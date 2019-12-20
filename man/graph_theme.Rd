@@ -4,9 +4,15 @@
 \alias{graph_theme}
 \title{Apply a common theme to graphs generated with ggplot2}
 \usage{
-graph_theme(base_size = 11, base_family = "",
-  legend.position = "bottom", legend.box = NULL, axis = TRUE,
-  base_line_size = base_size/22, base_rect_size = base_size/22)
+graph_theme(
+  base_size = 11,
+  base_family = "",
+  legend.position = "bottom",
+  legend.box = NULL,
+  axis = TRUE,
+  base_line_size = base_size/22,
+  base_rect_size = base_size/22
+)
 }
 \arguments{
 \item{base_size}{Numeric. Adjust size parameters.}

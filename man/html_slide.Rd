@@ -4,8 +4,14 @@
 \alias{html_slide}
 \title{Insert a reveal js slide}
 \usage{
-html_slide(title = "", colorback = "#FFFFFF", transback = "slide",
-  transdata = "fade", image = "", video = "")
+html_slide(
+  title = "",
+  colorback = "#FFFFFF",
+  transback = "slide",
+  transdata = "fade",
+  image = "",
+  video = ""
+)
 }
 \arguments{
 \item{title}{Character. Title of the slide.}

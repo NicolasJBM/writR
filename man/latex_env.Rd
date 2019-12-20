@@ -4,9 +4,16 @@
 \alias{latex_env}
 \title{Insert text (question, proposition, hypothesis, quote) in Latex environments}
 \usage{
-latex_env(text = "", env = "hypothesis", space_before = "15pt",
-  space_between = "5pt", space_after = "15pt", author = "",
-  bibkey = FALSE, pages = "")
+latex_env(
+  text = "",
+  env = "hypothesis",
+  space_before = "15pt",
+  space_between = "5pt",
+  space_after = "15pt",
+  author = "",
+  bibkey = FALSE,
+  pages = ""
+)
 }
 \arguments{
 \item{text}{charactervector. Text to be inserted. If more than one entry are prvided, create a sub-environment.}

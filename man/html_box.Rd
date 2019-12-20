@@ -4,9 +4,16 @@
 \alias{html_box}
 \title{Create an html box which can be placed anywhere on the page or slide.}
 \usage{
-html_box(text = "", width = "20\%", top = "0px", left = "0px",
-  background = rgb(0, 0, 0, 0.75), color = "#FFF", size = 14,
-  align = "justify")
+html_box(
+  text = "",
+  width = "20\%",
+  top = "0px",
+  left = "0px",
+  background = rgb(0, 0, 0, 0.75),
+  color = "#FFF",
+  size = 14,
+  align = "justify"
+)
 }
 \arguments{
 \item{text}{Character. Content of the box.}

@@ -4,8 +4,12 @@
 \alias{stat_stars}
 \title{Add stars to a vector of coefficients based on the p-value.}
 \usage{
-stat_stars(coeff = NULL, pval = NULL, thresholds = c(0.01, 0.05,
-  0.1), digits = 3)
+stat_stars(
+  coeff = NULL,
+  pval = NULL,
+  thresholds = c(0.01, 0.05, 0.1),
+  digits = 3
+)
 }
 \arguments{
 \item{coeff}{Numeric vector. Coefficients.}

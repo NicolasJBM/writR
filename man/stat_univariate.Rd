@@ -4,8 +4,12 @@
 \alias{stat_univariate}
 \title{Generate a table displaying variables univariate statistics}
 \usage{
-stat_univariate(x, variables = NULL, include = c("Variable", "Count",
-  "Min", "Median", "Mean", "Max", "Range", "St.Dev", "Skew", "Kurt"))
+stat_univariate(
+  x,
+  variables = NULL,
+  include = c("Variable", "Count", "Min", "Median", "Mean", "Max", "Range", "St.Dev",
+    "Skew", "Kurt")
+)
 }
 \arguments{
 \item{x}{Tibble or dataframe. Table with only numeric variables.}

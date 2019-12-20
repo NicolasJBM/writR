@@ -4,9 +4,16 @@
 \alias{latex_panels}
 \title{Insert tables or figures in panels in a Latex environments}
 \usage{
-latex_panels(panels, subcaptions, tab_width = c(1), end_line = c(F),
-  maincaption, label, orientation = "portrait",
-  font_size = "normalsize")
+latex_panels(
+  panels,
+  subcaptions,
+  tab_width = c(1),
+  end_line = c(F),
+  maincaption,
+  label,
+  orientation = "portrait",
+  font_size = "normalsize"
+)
 }
 \arguments{
 \item{panels}{Character vector. Output of the capture.output function applied to latex tables.}

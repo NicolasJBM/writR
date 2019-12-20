@@ -4,8 +4,7 @@
 \alias{stat_totals}
 \title{Add totals (sums or means) to a dataset.}
 \usage{
-stat_totals(x, rows = TRUE, columns = TRUE, omit_col = NA,
-  summary = "sum")
+stat_totals(x, rows = TRUE, columns = TRUE, omit_col = NA, summary = "sum")
 }
 \arguments{
 \item{x}{Dataframe. Data to which you wish to add the totals}

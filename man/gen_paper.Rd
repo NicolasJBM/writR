@@ -4,9 +4,14 @@
 \alias{gen_paper}
 \title{Format submissions.}
 \usage{
-gen_paper(..., engine = "xelatex", journal = "aom", keep_tex = TRUE,
+gen_paper(
+  ...,
+  engine = "xelatex",
+  journal = "aom",
+  keep_tex = TRUE,
   citation_package = "natbib",
-  md_extensions = c("-autolink_bare_uris"))
+  md_extensions = c("-autolink_bare_uris")
+)
 }
 \arguments{
 \item{...}{Arguments passed to \code{pdf_document()}.}
@@ -21,7 +26,7 @@ gen_paper(..., engine = "xelatex", journal = "aom", keep_tex = TRUE,
 or \code{biblatex}. Use \code{none} if neither package is to be used.}
 
 \item{md_extensions}{Markdown extensions to be added or removed from the
-default definition or R Markdown. See the \code{\link{rmarkdown_format}} for
+default definition or R Markdown. See the \code{\link[rmarkdown]{rmarkdown_format}} for
 additional details.}
 }
 \value{

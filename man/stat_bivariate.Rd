@@ -4,8 +4,14 @@
 \alias{stat_bivariate}
 \title{Generate and format a correlation table for publication.}
 \usage{
-stat_bivariate(x, use = "pairwise", method = "pearson", digits = 3,
-  variables = NULL, addpval = T)
+stat_bivariate(
+  x,
+  use = "pairwise",
+  method = "pearson",
+  digits = 3,
+  variables = NULL,
+  addpval = T
+)
 }
 \arguments{
 \item{x}{Tibble or dataframe. Numeric variables as columns, observations as rows.}

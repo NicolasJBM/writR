@@ -4,8 +4,14 @@
 \alias{latex_long_stargazer}
 \title{Create a longtable stargazer output}
 \usage{
-latex_long_stargazer(..., table_caption, table_label,
-  threeparttable = TRUE, landscape = FALSE, font_size = "small")
+latex_long_stargazer(
+  ...,
+  table_caption,
+  table_label,
+  threeparttable = TRUE,
+  landscape = FALSE,
+  font_size = "small"
+)
 }
 \arguments{
 \item{...}{Arguments passed to the stargazer function.}
