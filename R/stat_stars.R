@@ -1,7 +1,7 @@
 #' Add stars to a vector of coefficients based on the p-value.
 #' @param coeff      Numeric vector. Coefficients.
 #' @param pval       Numeric vector. Corresponding p-values.
-#' @param thresholds Numeric vector. three values indicating the cit-off p-values.
+#' @param thresholds Numeric vector. three values indicating the cut-off p-values.
 #' @param digits     Integer. Number of digits for rounding.
 #' @return Character vector with coefficients formatted for publication.
 #' @importFrom dplyr mutate

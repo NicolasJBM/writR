@@ -16,7 +16,7 @@ stat_stars(
 
 \item{pval}{Numeric vector. Corresponding p-values.}
 
-\item{thresholds}{Numeric vector. three values indicating the cit-off p-values.}
+\item{thresholds}{Numeric vector. three values indicating the cut-off p-values.}
 
 \item{digits}{Integer. Number of digits for rounding.}
 }
