@@ -35,7 +35,7 @@ stat_report <- function(coefficient = "$\beta$",
     ll <- round(estimate-qnorm(1-threshold/2)*std.error, digits)
     ul <- round(estimate+qnorm(1-threshold/2)*std.error, digits)
     
-    ci <- paste0(ci, " [", ll, ", ", ul, "]")
+    ci <- paste0(ci, "[", ll, ", ", ul, "]")
   } else ci <- ""
   
   
