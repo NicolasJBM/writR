@@ -9,26 +9,26 @@
 #' @importFrom tibble tibble
 #' @export
 
-stat_stars <- function(coeff = NULL, pval = NULL, thresholds = c(0.01,0.05,0.10), digits = 3) {
-  
+stat_stars <- function(coeff = NULL, pval = NULL, thresholds = c(0.01, 0.05, 0.10), digits = 3) {
+
   # Check entries
   stopifnot(
     !is.null(coeff),
     !is.null(pval)
   )
-  
+
   # Create a visible binding
   fcoeff <- NULL
   stars <- NULL
-  
+
   x <- tibble(coeff = coeff, pval = pval) %>%
     mutate(stars = "   ") %>%
     mutate(
       stars = case_when(
         pval < thresholds[[1]] ~ "***",
         pval >= thresholds[[1]] & pval < thresholds[[2]] ~ "** ",
-        pval >= thresholds[[2]] & pval < thresholds[[3]]  ~ "*  ",
-        TRUE                   ~ "   "
+        pval >= thresholds[[2]] & pval < thresholds[[3]] ~ "*  ",
+        TRUE ~ "   "
       )
     ) %>%
     mutate(coeff = format(round(coeff, digits = digits), nsmall = digits)) %>%
@@ -37,6 +37,6 @@ stat_stars <- function(coeff = NULL, pval = NULL, thresholds = c(0.01,0.05,0.10)
       TRUE ~ paste0("", coeff)
     )) %>%
     mutate(fcoeff = paste0(fcoeff, stars))
-  
+
   return(x$fcoeff)
 }

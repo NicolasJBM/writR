@@ -2,7 +2,7 @@
 % Please edit documentation in R/stat_univariate.R
 \name{stat_univariate}
 \alias{stat_univariate}
-\title{Generate a table displaying variables univariate statistics}
+\title{Generate a table displaying univariate statistics for all the variables included in x which must be numeric.}
 \usage{
 stat_univariate(
   x,
@@ -16,11 +16,11 @@ stat_univariate(
 
 \item{variables}{Character vector. Names of the variables.}
 
-\item{include}{Character vector. Names of the statistics to report (see the call of the function for the availabel statistics).}
+\item{include}{Character vector. Names of the statistics to report: "Count", "Min", "Median", "Mean", "Max", "Range", "St.Dev","Skew" and "Kurt".}
 }
 \value{
 Dataframe. Table of univariate statistics.
 }
 \description{
-Generate a table displaying variables univariate statistics
+Generate a table displaying univariate statistics for all the variables included in x which must be numeric.
 }

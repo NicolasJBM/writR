@@ -27,7 +27,7 @@ stat_bivariate(
 \item{addpval}{Logical. Whether p-values should be added below the correlations.}
 }
 \value{
-\preformatted{        A correlation table formated for publication.
+\preformatted{        A correlation table formatted for publication.
 }
 }
 \description{

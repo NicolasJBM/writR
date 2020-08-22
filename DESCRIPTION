@@ -33,25 +33,6 @@ Imports:
     purrr,
     stargazer,
     utils,
-    buildR,
-    rhandsontable,
-    knitr,
-    RefManageR,
-    plyr,
     psych,
-    yaml,
     stats,
-    tidyr,
-    tools,
-    readr,
-    doParallel,
-    foreach,
-    stringi,
-    ggplot2,
-    grid,
-    lubridate,
-    tokenizers,
-    RColorBrewer,
-    broom
-Suggests:
-    bibliogR
+    tidyr

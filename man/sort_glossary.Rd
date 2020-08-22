@@ -2,7 +2,7 @@
 % Please edit documentation in R/sort_glossary.R
 \name{sort_glossary}
 \alias{sort_glossary}
-\title{Sort the entries of a glossary at the end of a book.}
+\title{Sort the entries of a glossary at the end of a PDF book.}
 \usage{
 sort_glossary(glossary)
 }
@@ -10,5 +10,5 @@ sort_glossary(glossary)
 \item{glossary}{character string. Address of the glossary to sort.}
 }
 \description{
-Sort the entries of a glossary at the end of a book.
+Sort the entries of a glossary at the end of a PDF book.
 }

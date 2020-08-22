@@ -5,7 +5,7 @@
 #' @param digits       Numeric. Number of digits to be displayed in the formated table.
 #' @param variables    Character vector. Names of the variables in rows (if different from names in the dataframe).
 #' @param addpval      Logical. Whether p-values should be added below the correlations.
-#' @return             A correlation table formated for publication.
+#' @return             A correlation table formatted for publication.
 #' @importFrom psych corr.test
 #' @importFrom tibble as_tibble
 #' @importFrom dplyr select
@@ -21,10 +21,10 @@ stat_bivariate <- function(x,
                            digits = 3,
                            variables = NULL,
                            addpval = T) {
-  
+
   # Reformat to allow processing
   x <- as.data.frame(x)
-  
+
   # Get the correlations and their significance
   ct <- psych::corr.test(x, y = NULL, use, method) # compute correlations
   r <- ct$r # get correlation coefs
@@ -50,9 +50,9 @@ stat_bivariate <- function(x,
   } else {
     rlab <- variables
   }
-  rlab <- paste0(1:length(x), ". ", rlab)
-  clab <- paste0("(", 1:length(x), ")")
-  rows <- 1:nrow(m) # row indices
+  rlab <- paste0(seq_len(length(x)), ". ", rlab)
+  clab <- paste0("(", seq_len(length(x)), ")")
+  rows <- seq_len(nrow(m)) # row indices
   cols <- 2:ncol(m) # column indices
   odd <- rows %% 2 == 1 # odd rows
   even <- rows %% 2 == 0 # even rows

@@ -2,7 +2,7 @@
 % Please edit documentation in R/stat_totals.R
 \name{stat_totals}
 \alias{stat_totals}
-\title{Add totals (sums or means) to a dataset.}
+\title{Add totals (sums or means) to a dataframe.}
 \usage{
 stat_totals(x, rows = TRUE, columns = TRUE, omit_col = NA, summary = "sum")
 }
@@ -21,5 +21,5 @@ stat_totals(x, rows = TRUE, columns = TRUE, omit_col = NA, summary = "sum")
 Tibble with the summary statistics added as a column or a row.
 }
 \description{
-Add totals (sums or means) to a dataset.
+Add totals (sums or means) to a dataframe.
 }

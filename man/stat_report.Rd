@@ -2,7 +2,7 @@
 % Please edit documentation in R/stat_report.R
 \name{stat_report}
 \alias{stat_report}
-\title{Add stars to a vector of estimateicients based on the p-value.}
+\title{Format in-text reporting of confidence intervals or p-values around an estimate.}
 \usage{
 stat_report(
   coefficient = "$\\beta$",
@@ -27,8 +27,8 @@ stat_report(
 \item{stats}{Character vector. Statistics to report: "cf" for the coefficient, "ci" for the confidence internal, "pv" for the p-value}
 }
 \value{
-Character vector with coefficients formatted for publication.
+Character vector with estimates formatted with confidence intervals or p-values for publication.
 }
 \description{
-Add stars to a vector of estimateicients based on the p-value.
+Format in-text reporting of confidence intervals or p-values around an estimate.
 }
