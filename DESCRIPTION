@@ -26,7 +26,6 @@ Imports:
     tibble,
     DT,
     grDevices,
-    clipr,
     rstudioapi,
     rmarkdown,
     rticles,
@@ -35,4 +34,6 @@ Imports:
     utils,
     psych,
     stats,
-    tidyr
+    tidyr,
+    knitr,
+    tokenizers
