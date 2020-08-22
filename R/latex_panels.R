@@ -23,50 +23,54 @@ latex_panels <- function(panels,
                          maincaption,
                          label,
                          orientation = "portrait",
-                         font_size = "normalsize"){
-  
+                         font_size = "normalsize") {
   stopifnot(
     length(panels) == length(subcaptions),
     length(tab_width) == length(end_line),
     orientation %in% c("portrait", "landscape")
   )
-  
+
   # Bind variables
   before <- NULL
   object <- NULL
   after <- NULL
   width <- NULL
-  
-  if (orientation == "landscape"){
+
+  if (orientation == "landscape") {
     first <- "\\begin{landscape} \n"
     last <- "\n\\end{landscape}"
   } else {
     first <- ""
     last <- ""
   }
-  
-  if (length(tab_width) == 1){
-    
+
+  if (length(tab_width) == 1) {
     core <- tibble::tibble(
       object = panels,
       subcaptions = subcaptions
     )
-    
-    begbox <- paste0("\\begin{table}[!hbt] \n\\centering \n\\begin{minipage}{", tab_width, "\\textwidth} \n\\caption{", maincaption,"} \n\\label{", label,"}")
-    
+
+    begbox <- paste0(
+      "\\begin{table}[!hbt] \n\\centering \n\\begin{minipage}{", tab_width,
+      "\\textwidth} \n\\caption{", maincaption,
+      "} \n\\label{", label,
+      "}"
+    )
+
     endbox <- paste0("\\end{minipage} \n
                      \\end{table}")
-    
+
     core <- core %>%
       dplyr::mutate(
-        before = paste0("\\begin{subtable}[t]{\\linewidth} \n\\caption{", subcaptions,"} \n\\", font_size),
+        before = paste0(
+          "\\begin{subtable}[t]{\\linewidth} \n\\caption{", subcaptions,
+          "} \n\\", font_size
+        ),
         after = "\\end{subtable} \n\\vspace{15pt}\n"
       ) %>%
       mutate(object = purrr::pmap(list(before, object, after), c)) %>%
       dplyr::select(object)
-    
   } else {
-    
     core <- tibble::tibble(
       object = panels,
       width = tab_width,
@@ -74,30 +78,41 @@ latex_panels <- function(panels,
       end_line = end_line
     ) %>%
       dplyr::mutate(
-        end_line = dplyr::case_when(end_line == 1 ~ " \n\n\\vspace{15pt}\n\n", TRUE ~ " \n\\hspace{\\fill}")
+        end_line = dplyr::case_when(
+          end_line == 1 ~ " \n\n\\vspace{15pt}\n\n",
+          TRUE ~ " \n\\hspace{\\fill}"
+        )
       )
-    
-    begbox <- paste0("\\begin{table}[!hbt] \n\\caption{", maincaption,"} \n\\label{", label,"}")
-    
+
+    begbox <- paste0(
+      "\\begin{table}[!hbt] \n\\caption{", maincaption,
+      "} \n\\label{", label,
+      "}"
+    )
+
     endbox <- paste0("\\end{table}")
-    
+
     core <- core %>%
       dplyr::mutate(
-        before = paste0("\\begin{subtable}[t]{", width, "\\linewidth} \n\\caption{", subcaptions,"} \n\\raggedright \n\\", font_size),
+        before = paste0(
+          "\\begin{subtable}[t]{", width,
+          "\\linewidth} \n\\caption{", subcaptions,
+          "} \n\\raggedright \n\\", font_size
+        ),
         after = paste0("\\end{subtable}", end_line)
       ) %>%
       dplyr::mutate(object = purrr::pmap(list(before, object, after), c)) %>%
       dplyr::select(object)
   }
-  
-  start <- paste0(first,begbox)
+
+  start <- paste0(first, begbox)
   end <- paste0(endbox, last)
-  
+
   output <- unlist(list(
     start,
     core,
     end
   ))
-  
+
   writeLines(output)
 }

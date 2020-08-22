@@ -27,7 +27,7 @@ latex_long_stargazer(
 \item{font_size}{Integer. Size of the font inside the table.}
 }
 \value{
-\preformatted{           A printable Latex table
+\preformatted{           A printable Latex long table
 }
 }
 \description{

@@ -33,7 +33,7 @@ latex_fit_stargazer(
 \item{space_after}{Character. Spacing after the table.}
 }
 \value{
-\preformatted{         A printable Latex table
+\preformatted{         A resized printable Latex table.
 }
 }
 \description{

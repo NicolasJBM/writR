@@ -2,7 +2,7 @@
 % Please edit documentation in R/latex_env.R
 \name{latex_env}
 \alias{latex_env}
-\title{Insert text (question, proposition, hypothesis, quote) in Latex environments}
+\title{Insert text like a question, proposition, hypothesis or quote in Latex environments}
 \usage{
 latex_env(
   text = "",
@@ -16,7 +16,7 @@ latex_env(
 )
 }
 \arguments{
-\item{text}{charactervector. Text to be inserted. If more than one entry are prvided, create a sub-environment.}
+\item{text}{character vector. Text to be inserted. If more than one entry are prvided, create a sub-environment.}
 
 \item{env}{Character. Latex environment in which the text has to be inserted.}
 
@@ -28,14 +28,14 @@ latex_env(
 
 \item{author}{Character. Person quoted.}
 
-\item{bibkey}{Logical. Wheter the author is formated as a reference.}
+\item{bibkey}{Logical. Whether the author is formatted as a reference.}
 
 \item{pages}{Character. Pages of the quote.}
 }
 \value{
-\preformatted{         Character. Formated Latex environment.
+\preformatted{         Character. Formatted Latex environment.
 }
 }
 \description{
-Insert text (question, proposition, hypothesis, quote) in Latex environments
+Insert text like a question, proposition, hypothesis or quote in Latex environments
 }

@@ -10,7 +10,7 @@ int(x)
 \item{x}{Double or Integer. Number to be properly formated.}
 }
 \value{
-Character. Formated number.
+Character. Formatted number.
 }
 \description{
 int formats as an integer.
