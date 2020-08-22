@@ -2,13 +2,13 @@
 % Please edit documentation in R/add_html.R
 \name{add_html}
 \alias{add_html}
-\title{Gadget to insert various objects in an html document.}
+\title{Gadget to insert various html objects in a document.}
 \usage{
 add_html()
 }
 \value{
-A citation.
+Write lines of html codes for the desired objects where the function was called.
 }
 \description{
-Gadget to insert various objects in an html document.
+Gadget to insert various html objects in a document.
 }

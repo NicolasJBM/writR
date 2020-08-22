@@ -4,13 +4,15 @@
 \name{jelcodes}
 \alias{jelcodes}
 \title{List of JEL codes}
-\format{A data frame with the following variables:
+\format{
+A data frame with the following variables:
 \itemize{
 \item level1
 \item level2
 \item level3
 \item code
-}}
+}
+}
 \source{
 https://www.aeaweb.org/econlit/jelCodes.php?view=jel
 }

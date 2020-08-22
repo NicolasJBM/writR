@@ -14,19 +14,20 @@ LazyData: true
 License: GPL-3 | file LICENSE
 Depends: R (>= 3.6)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 Imports:
-    knitr,
-    RefManageR,
-    dplyr,
-    plyr,
-    tibble,
     shiny,
     miniUI,
     shinythemes,
     colourpicker,
+    dplyr,
     stringr,
+    tibble,
+    rhandsontable,
+    knitr,
+    RefManageR,
+    plyr,
     psych,
     rstudioapi,
     rmarkdown,
@@ -35,7 +36,6 @@ Imports:
     tidyr,
     rticles,
     tools,
-    rhandsontable,
     readr,
     purrr,
     doParallel,
@@ -48,34 +48,8 @@ Imports:
     grDevices,
     lubridate,
     tokenizers,
-    ggtern,
-    plotly,
-    collapsibleTree,
-    ggiraphExtra,
-    ggridges,
-    VennDiagram,
-    treemap,
-    treemapify,
-    ggalt,
-    maptools,
-    cartogram,
-    ggraph,
-    igraph,
     RColorBrewer,
     broom,
-    mapproj,
-    DiagrammeR,
-    tidygraph,
-    intergraph,
-    network,
-    networkDynamic,
-    ndtv,
-    sna,
-    ggforce,
-    concaveman,
-    rayshader,
-    av,
-    buildR,
-    DT
+    mapproj
 Suggests:
     bibliogR
