@@ -9,6 +9,7 @@
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #' @importFrom dplyr bind_rows
+#' @importFrom dplyr everything
 #' @export
 
 

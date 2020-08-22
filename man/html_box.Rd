@@ -33,7 +33,7 @@ html_box(
 \item{align}{Character. Text alignment}
 }
 \value{
-Character. Formated number.
+Character. Formatted number.
 }
 \description{
 Create an html box which can be placed anywhere on the page or slide.

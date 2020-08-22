@@ -7,7 +7,8 @@
 #' @param color Character. Font color.
 #' @param size Integer. Font size.
 #' @param align Character. Text alignment
-#' @return Character. Formated number.
+#' @return Character. Formatted number.
+#' @importFrom grDevices rgb
 #' @export
 
 html_box <- function(text = "",

@@ -7,7 +7,7 @@
 add_yaml()
 }
 \value{
-A citation.
+Write lines of the YAML at the top of the Rmd files in which the paper is written.
 }
 \description{
 Gadget to insert the yaml of a research paper.
