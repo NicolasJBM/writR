@@ -7,7 +7,7 @@
 count_words(text = "")
 }
 \arguments{
-\item{text}{Character. The sentence(s) in which the words have to be counted. Only paragraphs can be counted from the clipboard.}
+\item{text}{Character. The sentence(s) in which the words have to be counted.}
 }
 \value{
 Numeric. Number of words in the text

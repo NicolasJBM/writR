@@ -8,7 +8,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "nicolas.jb.mangin@gmail.com",
            comment = c(ORCID = "0000-0002-1597-9376"))
-Description: Functions and interfaces to facilitate writing blog posts, papers, slides, books, reports, and dashboards.
+Description: Functions and interfaces to facilitate writing slides, blog posts, papers and books.
 Encoding: UTF-8
 LazyData: true
 License: GPL-3 | file LICENSE
@@ -26,6 +26,7 @@ Imports:
     tibble,
     DT,
     grDevices,
+    clipr,
     buildR,
     rhandsontable,
     knitr,
