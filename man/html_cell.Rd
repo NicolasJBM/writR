@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_cell.R
 \name{html_cell}
 \alias{html_cell}
-\title{Write html code for a cell (is ment to be used through html_layout)}
+\title{Write HTML code for a cell; it is meant to be used through html_layout.}
 \usage{
 html_cell(width = 1)
 }
@@ -10,10 +10,10 @@ html_cell(width = 1)
 \item{width}{Integer. relative width of the cell.}
 }
 \value{
-Character. html cell.
+Character. HTML code for a cell.
 }
 \description{
-Write html code for a cell (is ment to be used through html_layout)
+Write HTML code for a cell; it is meant to be used through html_layout.
 }
 \seealso{
 html_layout

@@ -27,7 +27,7 @@ html_slide(
 \item{video}{Character. Address of the background video.}
 }
 \value{
-Character. Reveal js slide formated for rmarkdown.
+Character. Reveal js slide formatted for rmarkdown.
 }
 \description{
 Insert a reveal js slide

@@ -10,7 +10,7 @@ count_words(text = "")
 \item{text}{Character. The sentence(s) in which the words have to be counted.}
 }
 \value{
-Numeric. Number of words in the text
+Numeric. Number of words in the text.
 }
 \description{
 Count the number of words in a text.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_row.R
 \name{html_row}
 \alias{html_row}
-\title{Gather html cells on a row (is ment to be used through html_layout)}
+\title{Gather html cells on a row; it is meant to be used through html_layout.}
 \usage{
 html_row(cells)
 }
@@ -13,7 +13,7 @@ html_row(cells)
 Character. html row composed of several cells.
 }
 \description{
-Gather html cells on a row (is ment to be used through html_layout)
+Gather html cells on a row; it is meant to be used through html_layout.
 }
 \seealso{
 html_layout

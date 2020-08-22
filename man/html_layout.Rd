@@ -2,16 +2,16 @@
 % Please edit documentation in R/html_layout.R
 \name{html_layout}
 \alias{html_layout}
-\title{Create an html grid layout}
+\title{Create a HTML grid layout}
 \usage{
 html_layout(layout = list(c(1, 2, 1), c(3, 1), c(1, 1, 1, 1)))
 }
 \arguments{
-\item{layout}{list of vectors. one vector per row, the integers in the vector specifying the relative width of rach cell of this row.}
+\item{layout}{list of vectors. one vector per row, the integers in the vector specifying the relative width of each cell of this row.}
 }
 \value{
-Character. html grid.
+Character. Code for HTML grid.
 }
 \description{
-Create an html grid layout
+Create a HTML grid layout
 }

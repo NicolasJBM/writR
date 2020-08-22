@@ -7,27 +7,27 @@
 #' @param journal character. Journal to which the paper is submitted. See details for the available options.
 #' @details The templates currently available are:
 #' \itemize{
-#'    \item tar for The Accounting Review
-#'    \item bria for Behavioral Research in Accounting
-#'    \item jmar for Journal of Management Accounting Research
-#'    \item car for Contemporary Accounting Research
-#'    \item ear for European Accounting Review
 #'    \item aos for Accounting, Organizations, and Society
+#'    \item bria for Behavioral Research in Accounting
+#'    \item car for Contemporary Accounting Research 
 #'    \item cpa for Critical Perspectives on Accounting
+#'    \item ear for European Accounting Review
 #'    \item jae for Journal of Accounting and Economics
-#'    \item mar for Management Accounting Research
 #'    \item jar for Journal of Accounting Research
 #'    \item jaaf for Journal of Accounting, Auditing, and Finance
+#'    \item jmar for Journal of Management Accounting Research
+#'    \item mar for Management Accounting Research
+#'    \item tar for The Accounting Review
 #'    \item jfe for Journal of Financial Economics
 #'    \item amj for Academy of Management Journal
 #'    \item amr for Academy of Management Review
-#'    \item mnsc for Management Science
-#'    \item orsc for Organization Science
 #'    \item jibs for Journal of International Business Studies
 #'    \item jom for Journal of Management
+#'    \item mnsc for Management Science
+#'    \item orsc for Organization Science
 #'    \item smj for Strategic Management Journal
-#'    \item jap for Journal of Applied Psychology
 #'    \item orm for Organizational Research Methods
+#'    \item jap for Journal of Applied Psychology
 #' }
 #' @return R Markdown output format to pass to
 #'   \code{\link[rmarkdown:render]{render}}
