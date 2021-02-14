@@ -1,4 +1,7 @@
-#' Insert a reveal js slide
+#' @name html_slide
+#' @title Create a HTML slide
+#' @author Nicolas Mangin
+#' @description Insert a reveal js slide
 #' @param title Character. Title of the slide.
 #' @param colorback Character. Background color.
 #' @param transback Character. Type of transition for the background: fade, slide, convex, concave, or zoom.

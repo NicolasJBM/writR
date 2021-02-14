@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_box.R
 \name{html_box}
 \alias{html_box}
-\title{Create a HTML box which can be placed anywhere on the page or slide, just by specifying the distance from the top left.}
+\title{Place a Box on a Slide}
 \usage{
 html_box(
   text = "",
@@ -37,4 +37,7 @@ Character. Formatted and placed box.
 }
 \description{
 Create a HTML box which can be placed anywhere on the page or slide, just by specifying the distance from the top left.
+}
+\author{
+Nicolas Mangin
 }

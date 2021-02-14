@@ -2,7 +2,7 @@
 % Please edit documentation in R/latex_panels.R
 \name{latex_panels}
 \alias{latex_panels}
-\title{Insert tables or figures in panels in a Latex environments}
+\title{Create Latex Panels}
 \usage{
 latex_panels(
   panels,
@@ -33,9 +33,11 @@ latex_panels(
 \item{font_size}{Character. Latex specification of the font size (e.g. "normalsize", "small", "tiny").}
 }
 \value{
-\preformatted{       Character. A set of objects organized as panels.
-}
+Character. A set of objects organized as panels.
 }
 \description{
 Insert tables or figures in panels in a Latex environments
+}
+\author{
+Nicolas Mangin
 }

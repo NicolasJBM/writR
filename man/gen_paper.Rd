@@ -2,7 +2,7 @@
 % Please edit documentation in R/gen_paper.R
 \name{gen_paper}
 \alias{gen_paper}
-\title{Format submissions.}
+\title{Format submissions}
 \usage{
 gen_paper(
   ...,
@@ -63,4 +63,7 @@ The templates currently available are:
 \item orm for Organizational Research Methods
 \item jap for Journal of Applied Psychology
 }
+}
+\author{
+Nicolas Mangin
 }

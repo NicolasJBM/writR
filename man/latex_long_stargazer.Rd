@@ -2,7 +2,7 @@
 % Please edit documentation in R/latex_long_stargazer.R
 \name{latex_long_stargazer}
 \alias{latex_long_stargazer}
-\title{Create a longtable stargazer output}
+\title{Make Table Long}
 \usage{
 latex_long_stargazer(
   ...,
@@ -32,4 +32,7 @@ latex_long_stargazer(
 }
 \description{
 Create a longtable stargazer output
+}
+\author{
+Nicolas Mangin
 }

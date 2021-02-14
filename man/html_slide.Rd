@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_slide.R
 \name{html_slide}
 \alias{html_slide}
-\title{Insert a reveal js slide}
+\title{Create a HTML slide}
 \usage{
 html_slide(
   title = "",
@@ -31,4 +31,7 @@ Character. Reveal js slide formatted for rmarkdown.
 }
 \description{
 Insert a reveal js slide
+}
+\author{
+Nicolas Mangin
 }

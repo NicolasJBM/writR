@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_layout.R
 \name{html_layout}
 \alias{html_layout}
-\title{Create a HTML grid layout}
+\title{Insert a Grid Layout}
 \usage{
 html_layout(layout = list(c(1, 2, 1), c(3, 1), c(1, 1, 1, 1)))
 }
@@ -14,4 +14,7 @@ Character. Code for HTML grid.
 }
 \description{
 Create a HTML grid layout
+}
+\author{
+Nicolas Mangin
 }

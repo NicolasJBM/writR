@@ -1,4 +1,7 @@
-#' Create a Latex tabular environment for stargazer and insert it in an adjustable table
+#' @name latex_fit_stargazer
+#' @title Fit Table Size
+#' @author Nicolas Mangin
+#' @description Create a Latex tabular environment for stargazer and insert it in an adjustable table
 #' @param ...           Arguments passed to the stargazer function.
 #' @param table_caption Character. Title of the table.
 #' @param table_label   Character. Label of the table (for referencing in Latex).

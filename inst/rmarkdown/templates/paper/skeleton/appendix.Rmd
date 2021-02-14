@@ -1,0 +1,42 @@
+---
+title: "Appendix"
+author:
+  - name: Firstname Lastname
+    email: email@address.net
+    affiliation: Institution
+    address: Sowhere in the world
+    footnote: Corresponding author.
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+disclaimer: ""
+acknowledgements: ""
+abstract: ""
+keywords: some keywords, separated by commas
+jel: G38, L51, M14, O16
+data: All data used in this study are publicly available.
+submissionid: 
+firstpage: 
+bibliography: dat/ref.bib
+doublespace: TRUE
+tabfigtoend: FALSE
+raggedright: FALSE
+linenumbers: FALSE
+output:
+  writR::gen_paper:
+     engine: xelatex
+     journal: amj
+---
+
+```{r setup, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+# Load packages likely to be used.
+library(writR)
+# Set global options.
+options(
+  scipen=999,
+  knitr.kable.NA = ''
+)
+bibliogR::gen_bib()
+```
+
+
+
+# Appendix A

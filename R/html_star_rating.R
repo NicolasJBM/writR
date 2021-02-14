@@ -1,4 +1,7 @@
-#' Function inserting a star rating in an HTML document. This requires the css and the starrating.js to be specified separately in the header and footer of the HTML document.
+#' @name html_star_rating
+#' @title Insert a Star Rating
+#' @author Nicolas Mangin
+#' @description Function inserting a star rating in an HTML document. This requires the css and the starrating.js to be specified separately in the header and footer of the HTML document.
 #' @param source Character. Name of the book.
 #' @param page   Integer. Number of the section in the book.
 #' @return HTML code to collect star ratings in online textbooks.

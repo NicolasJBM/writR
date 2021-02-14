@@ -1,4 +1,7 @@
-#' Create a longtable stargazer output
+#' @name latex_long_stargazer
+#' @title Make Table Long
+#' @author Nicolas Mangin
+#' @description Create a longtable stargazer output
 #' @param ...             Arguments passed to the stargazer function.
 #' @param table_caption   Character. Title of the table.
 #' @param table_label     Character. Label of the table (for referencing in Latex).
@@ -25,7 +28,11 @@ latex_long_stargazer <- function(...,
   # Changing tabulare environment for longtable
   x <- gsub("tabular", "longtable", x)
 
-  x <- c(x[1:which(x == "\\hline \\\\[-1.8ex] ")[1] - 1], "\\endhead", x[which(x == "\\hline \\\\[-1.8ex] ")[1]:length(x)])
+  x <- c(
+    x[1:which(x == "\\hline \\\\[-1.8ex] ")[1] - 1],
+    "\\endhead",
+    x[which(x == "\\hline \\\\[-1.8ex] ")[1]:length(x)]
+  )
 
   x <- c(
     paste0("\\", font_size),

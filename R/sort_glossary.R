@@ -1,4 +1,7 @@
-#' Sort the entries of a glossary at the end of a PDF book.
+#' @name sort_glossary
+#' @title Sort Book Glossary
+#' @author Nicolas Mangin
+#' @description Sort the entries of a glossary at the end of a PDF book.
 #' @param glossary character string. Address of the glossary to sort.
 #' @importFrom dplyr arrange
 #' @importFrom dplyr mutate
@@ -33,7 +36,9 @@ sort_glossary <- function(glossary) {
     tidyr::unite(glossary, V1, V2, sep = "\n") %>%
     dplyr::mutate(first = paste0("\n \n**", substr(glossary, 1, 1), "**")) %>%
     dplyr::group_by(first) %>%
-    dplyr::summarise(glossary = paste(glossary, collapse = " \\newline \n \n")) %>%
+    dplyr::summarise(
+      glossary = paste(glossary, collapse = " \\newline \n \n")
+    ) %>%
     dplyr::mutate(glossary = paste(glossary, " \\newline \n \n", sep = "")) %>%
     tidyr::unite(glossary, first, glossary, sep = " \\newline \n \n")
 

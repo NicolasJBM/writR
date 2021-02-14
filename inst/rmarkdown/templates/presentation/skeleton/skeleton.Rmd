@@ -1,0 +1,77 @@
+---
+title: "Title"
+author: <hr> Author
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  revealjs::revealjs_presentation:
+    transition: default
+    background_transition: slide
+    theme: simple
+    highlight: zenburn
+    center: true
+    reveal_options:
+      slideNumber: true
+      previewLinks: true
+      showNotes: true
+    fig_width: 8
+    fig_height: 5
+    fig_caption: true
+    mathjax: default
+    self_contained: false
+    reveal_plugins: ["notes", "chalkboard"]
+    css: fmt/styles.css
+    includes:
+        in_header: fmt/header.html
+csl: fmt/apa.csl
+bibliography: dat/ref.bib
+---
+
+```{r setup, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+# Set global options.
+options(knitr.kable.NA = '')
+# Generate bibliography
+if ("bibliogR" %in% rownames(installed.packages())) bibliogR::gen_bib()
+```
+
+# try this
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+> -   Bullet 1
+>
+> -   Bullet 2
+>
+> -   Bullet 3
+
+## Slide with R Code and Output
+
+```{r}
+summary(cars)
+```
+
+## Slide with Plot
+
+<hr>
+
+```{r, echo=FALSE, fig.cap="cars"}
+plot(cars)
+```
+
+## Slide with an equation
+
+$$
+\begin{aligned}
+RI & = (\frac{OI}{OA}-WACC) \times OA \\
+   & = OI - WACC \times OA
+\end{aligned}
+$$
+
+# You can also add references [@Simons2005]
+
+# References

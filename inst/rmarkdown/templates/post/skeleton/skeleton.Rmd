@@ -1,0 +1,21 @@
+---
+title: "Title"
+author: "Firstname Lastname"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+categories: ["First category"]
+tags: ["Tag 1", "tag 2"]
+csl: fmt/apa.csl
+bibliography: dat/ref.bib
+---
+
+
+```{r setup, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+# Set global options.
+options(
+  scipen=999,
+  knitr.kable.NA = ''
+)
+# Generate bibliography
+if ("bibliogR" %in% rownames(installed.packages())) bibliogR::gen_bib()
+```
+

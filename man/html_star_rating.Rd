@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_star_rating.R
 \name{html_star_rating}
 \alias{html_star_rating}
-\title{Function inserting a star rating in an HTML document. This requires the css and the starrating.js to be specified separately in the header and footer of the HTML document.}
+\title{Insert a Star Rating}
 \usage{
 html_star_rating(source = "", page = 1)
 }
@@ -16,4 +16,7 @@ HTML code to collect star ratings in online textbooks.
 }
 \description{
 Function inserting a star rating in an HTML document. This requires the css and the starrating.js to be specified separately in the header and footer of the HTML document.
+}
+\author{
+Nicolas Mangin
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_row.R
 \name{html_row}
 \alias{html_row}
-\title{Gather html cells on a row; it is meant to be used through html_layout.}
+\title{Create a row for a layout}
 \usage{
 html_row(cells)
 }
@@ -17,4 +17,7 @@ Gather html cells on a row; it is meant to be used through html_layout.
 }
 \seealso{
 html_layout
+}
+\author{
+Nicolas Mangin
 }

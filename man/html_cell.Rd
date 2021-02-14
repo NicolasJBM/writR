@@ -2,12 +2,14 @@
 % Please edit documentation in R/html_cell.R
 \name{html_cell}
 \alias{html_cell}
-\title{Write HTML code for a cell; it is meant to be used through html_layout.}
+\title{Create a cell for a row in a layout}
 \usage{
-html_cell(width = 1)
+html_cell(width = 1, cell_name)
 }
 \arguments{
 \item{width}{Integer. relative width of the cell.}
+
+\item{cell_name}{Integer. ID of the cell to identify it.}
 }
 \value{
 Character. HTML code for a cell.
@@ -17,4 +19,7 @@ Write HTML code for a cell; it is meant to be used through html_layout.
 }
 \seealso{
 html_layout
+}
+\author{
+Nicolas Mangin
 }

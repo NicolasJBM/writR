@@ -1,39 +1,40 @@
 Package: writR
-Title: Toolbox for writers in R
-Version: 1.1
-Date: 2019-08-26
+Title: Toolbox to Support Academic Writing
+Version: 0.1.0
+Date: 2021-02-14
 Authors@R: 
     person(given = "Nicolas",
            family = "Mangin",
            role = c("aut", "cre"),
            email = "nicolas.jb.mangin@gmail.com",
            comment = c(ORCID = "0000-0002-1597-9376"))
-Description: Functions and interfaces to facilitate writing slides, blog posts, papers and books.
+Description: Facilitate writing notenook posts, presentations, and papers.
 Encoding: UTF-8
+URL: https://github.com/NicolasJBM/writR
 LazyData: true
 License: GPL-3 | file LICENSE
-Depends: R (>= 3.6)
+Depends: R (>= 4.0)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Imports:
-    shiny,
-    miniUI,
-    shinythemes,
-    colourpicker,
-    dplyr,
-    stringr,
-    tibble,
-    DT,
-    grDevices,
-    rstudioapi,
-    rmarkdown,
-    rticles,
-    purrr,
-    stargazer,
-    utils,
-    psych,
-    stats,
-    tidyr,
-    knitr,
-    tokenizers
+  shiny,
+  miniUI,
+  bslib,
+  colourpicker,
+  dplyr,
+  stringr,
+  tibble,
+  DT,
+  grDevices,
+  rstudioapi,
+  rmarkdown,
+  rticles,
+  purrr,
+  stargazer,
+  utils,
+  psych,
+  stats,
+  tidyr,
+  knitr,
+  tokenizers

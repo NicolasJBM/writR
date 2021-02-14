@@ -2,7 +2,7 @@
 % Please edit documentation in R/latex_fit_stargazer.R
 \name{latex_fit_stargazer}
 \alias{latex_fit_stargazer}
-\title{Create a Latex tabular environment for stargazer and insert it in an adjustable table}
+\title{Fit Table Size}
 \usage{
 latex_fit_stargazer(
   ...,
@@ -38,4 +38,7 @@ latex_fit_stargazer(
 }
 \description{
 Create a Latex tabular environment for stargazer and insert it in an adjustable table
+}
+\author{
+Nicolas Mangin
 }

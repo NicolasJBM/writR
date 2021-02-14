@@ -1,7 +1,7 @@
-#' Format submissions.
-#'
-#' Format submissions to various academic conferences and journals.
-#'
+#' @name gen_paper
+#' @title Format submissions
+#' @author Nicolas Mangin
+#' @description Format submissions to various academic conferences and journals.
 #' @inheritParams rmarkdown::pdf_document
 #' @param engine character. Latex engine to be used to produce the pdf.
 #' @param journal character. Journal to which the paper is submitted. See details for the available options.
@@ -9,7 +9,7 @@
 #' \itemize{
 #'    \item aos for Accounting, Organizations, and Society
 #'    \item bria for Behavioral Research in Accounting
-#'    \item car for Contemporary Accounting Research 
+#'    \item car for Contemporary Accounting Research
 #'    \item cpa for Critical Perspectives on Accounting
 #'    \item ear for European Accounting Review
 #'    \item jae for Journal of Accounting and Economics
@@ -44,35 +44,30 @@ gen_paper <- function(...,
                       keep_tex = TRUE,
                       citation_package = "natbib",
                       md_extensions = c("-autolink_bare_uris")) {
-  
-  
+
+
   # Select the appropriate template for the journal specified and find its path.
-  template <- writR::journals[writR::journals$acronym == journal,]
-  
-  template_tex <- system.file("rmarkdown", "tex", file.path(template), package = "writR")
-  
+  template <- writR::dat_journals[writR::dat_journals$acronym == journal, ]
+
+  template_tex <- system.file(
+    "rmarkdown",
+    "tex",
+    file.path(template),
+    package = "writR"
+  )
+
   # Retrieve the template and produce the document.
   inherit_pdf_document <- function(...) {
     fmt <- rmarkdown::pdf_document(...)
     fmt$inherits <- "pdf_document"
     fmt
   }
-  
+
   inherit_pdf_document(...,
-                       template = template_tex,
-                       keep_tex = keep_tex,
-                       citation_package = citation_package,
-                       md_extensions = md_extensions,
-                       latex_engine = engine)
-  
+    template = template_tex,
+    keep_tex = keep_tex,
+    citation_package = citation_package,
+    md_extensions = md_extensions,
+    latex_engine = engine
+  )
 }
-
-
-
-
-
-
-
-
-
-
