@@ -1,0 +1,9 @@
+pandoc: 2.11.2
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  write_papers: write_papers.html
+  write_posts: write_posts.html
+  write_presentations: write_presentations.html
+last_built: 2021-02-20T15:25Z
+
