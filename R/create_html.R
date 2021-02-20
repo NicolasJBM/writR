@@ -207,7 +207,7 @@ add_html <- function() {
         for (i in 1:nrow) {
           layout[[i]] <- rep(1, ncol)
         }
-        html_layout(layout)
+        writR::html_layout(layout)
       } else if (input$typeobj == "iframe") {
         rstudioapi::insertText(paste0(
           '<iframe src="',
@@ -249,8 +249,8 @@ add_html <- function() {
     })
 
     observeEvent(input$done, {
-      stopApp()
+      shiny::stopApp()
     })
   }
-  runGadget(ui, server, viewer = paneViewer(minHeight = "maximize"))
+  shiny::runGadget(ui, server, viewer = shiny::paneViewer(minHeight = "maximize"))
 }

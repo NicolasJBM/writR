@@ -12,10 +12,10 @@ html_layout <- function(layout = list(c(1, 2, 1), c(3, 1), c(1, 1, 1, 1))) {
   for (i in seq_len(length(layout))) {
     cells <- layout[[i]]
     for (j in seq_len(length(cells))) {
-      cells[[j]] <- html_cell(cells[[j]], k)
+      cells[[j]] <- writR::html_cell(cells[[j]], k)
       k <- k + 1
     }
-    layout[[i]] <- html_row(cells)
+    layout[[i]] <- writR::html_row(cells)
     k <- k + 1
   }
 
