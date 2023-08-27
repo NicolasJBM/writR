@@ -1,0 +1,21 @@
+Package: writR
+Title: Toolbox to write various documents
+Version: 1.30
+Date: 2023-08-37
+Authors@R: 
+    person(given = "Nicolas",
+           family = "Mangin",
+           role = c("aut", "cre"),
+           email = "nicolas.jb.mangin@gmail.com",
+           comment = c(ORCID = "0000-0002-1597-9376"))
+Description: Functions and interfaces to facilitate writing reports, papers, or books.
+Encoding: UTF-8
+License: GPL-3 | file LICENSE
+Depends: R (>= 3.6)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports:
+  psych,
+  dplyr,
+  tibble
+
